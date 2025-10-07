@@ -1,26 +1,20 @@
-package com.example.resepapp
+package com.example.projekberdua
 
-import android.app.Activity
-import android.content.Intent
 import android.os.Bundle
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import com.example.resepapp.databinding.ActivityAddEditBinding
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 
-class AddEditActivity : AppCompatActivity() {
-
-    private lateinit var binding: ActivityAddEditBinding
-    private var position: Int = -1
-    private var isEditMode = false
-
+class Add_Edit : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityAddEditBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        val recipe = intent.getSerializableExtra("recipe") as? Recipe
-        position = intent.getIntExtra("position", -1)
-        isEditMode = recipe != null
-
-        if (isEditMode) {
-            binding.etTitle.setText(recipe?.title)
-            binding.et
+        enableEdgeToEdge()
+        setContentView(R.layout.activity_add_edit)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
+    }
+}
