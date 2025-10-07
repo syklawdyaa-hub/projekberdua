@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Projekberdua">
         <activity
+            android:name=".Add_Edit"
+            android:exported="false" />
+        <activity
+            android:name=".item_recipe"
+            android:exported="false" />
+        <activity
             android:name=".recipe"
             android:exported="false" />
         <activity
