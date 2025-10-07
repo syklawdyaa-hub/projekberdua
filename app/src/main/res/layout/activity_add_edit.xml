@@ -15,7 +15,7 @@
 
     <EditText
         android:id="@+id/etDescription"
-        android:hint="Deskripsi Resep"
+        android:hint="Alat bahan dan cara membuat"
         android:layout_marginTop="8dp"
         android:minLines="4"
         android:gravity="top"

@@ -1,4 +1,4 @@
-package com.example.projekberdua
+package com.example.resepapp
 
 import java.io.Serializable
 

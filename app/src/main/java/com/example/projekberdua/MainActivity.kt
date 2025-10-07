@@ -1,4 +1,4 @@
-package com.example.resepapp
+package com.example.projekberdua
 
 import android.app.Activity
 import android.content.Intent
@@ -7,8 +7,6 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.projekberdua.R
-
 class MainActivity : AppCompatActivity() {
 
     private lateinit var rvRecipes: RecyclerView
@@ -26,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         rvRecipes = findViewById(R.id.rvRecipes)
-        btnAdd = findViewById(R.id.btnAdd)
+        btnAdd = findViewById(R.id.tomtam)
 
         recipeAdapter = RecipeAdapter(recipeList,
             onEdit = { position -> editRecipe(position) },

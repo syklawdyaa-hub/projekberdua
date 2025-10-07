@@ -1,4 +1,4 @@
-package com.example.resepapp
+package com.example.projekberdua
 
 import android.app.Activity
 import android.content.Intent
