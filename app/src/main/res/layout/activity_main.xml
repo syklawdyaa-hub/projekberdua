@@ -7,10 +7,10 @@
         android:id="@+id/rvRecipes"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/btnAdd"/>
+        android:layout_above="@+id/tomtam"/>
 
     <Button
-        android:id="@+id/btnAdd"
+        android:id="@+id/tomtam"
         android:text="Tambah Resep"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
