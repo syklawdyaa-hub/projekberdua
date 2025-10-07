@@ -3,7 +3,8 @@
     android:padding="16dp"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/bgpink">
 
     <EditText
         android:id="@+id/etTitle"
@@ -27,5 +28,6 @@
         android:text="Simpan"
         android:layout_marginTop="16dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:backgroundTint="#EDBBBB"/>
 </LinearLayout>
