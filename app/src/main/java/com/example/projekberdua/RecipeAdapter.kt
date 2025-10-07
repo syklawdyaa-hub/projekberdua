@@ -1,32 +1,40 @@
 package com.example.resepapp
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.resepapp.databinding.ItemRecipeBinding
+import com.example.projekberdua.R
 
 class RecipeAdapter(
-    private val recipes: ArrayList<Recipe>,
+    private val recipeList: ArrayList<ItemRecipe>,
     private val onEdit: (Int) -> Unit,
     private val onDelete: (Int) -> Unit
-) : RecyclerView.Adapter<RecipeAdapter.RecipeViewHolder>() {
+) : RecyclerView.Adapter<RecipeAdapter.ViewHolder>() {
 
-    inner class RecipeViewHolder(val binding: ItemRecipeBinding) :
-        RecyclerView.ViewHolder(binding.root)
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipeViewHolder {
-        val binding = ItemRecipeBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return RecipeViewHolder(binding)
+    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val tvTitle: TextView = view.findViewById(R.id.tvTitle)
+        val tvDescription: TextView = view.findViewById(R.id.tvDescription)
+        val btnEdit: Button = view.findViewById(R.id.btnEdit)
+        val btnDelete: Button = view.findViewById(R.id.btnDelete)
     }
 
-    override fun getItemCount() = recipes.size
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.activity_item_recipe, parent, false)
+        return ViewHolder(view)
+    }
 
-    override fun onBindViewHolder(holder: RecipeViewHolder, position: Int) {
-        val recipe = recipes[position]
-        holder.binding.tvTitle.text = recipe.title
-        holder.binding.tvDescription.text = recipe.description
+    override fun getItemCount(): Int = recipeList.size
 
-        holder.binding.btnEdit.setOnClickListener { onEdit(position) }
-        holder.binding.btnDelete.setOnClickListener { onDelete(position) }
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val recipe = recipeList[position]
+        holder.tvTitle.text = recipe.title
+        holder.tvDescription.text = recipe.description
+
+        holder.btnEdit.setOnClickListener { onEdit(position) }
+        holder.btnDelete.setOnClickListener { onDelete(position) }
     }
 }

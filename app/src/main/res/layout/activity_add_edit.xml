@@ -9,21 +9,23 @@
         android:id="@+id/etTitle"
         android:hint="Judul Resep"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:textSize="20dp"/>
 
     <EditText
         android:id="@+id/etDescription"
-        android:hint="Deskripsi / Langkah-langkah"
+        android:hint="Deskripsi Resep"
+        android:layout_marginTop="8dp"
+        android:minLines="4"
+        android:gravity="top"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:minLines="3"
-        android:gravity="top"/>
+        android:textSize="20dp"/>
 
     <Button
         android:id="@+id/btnSave"
         android:text="Simpan"
+        android:layout_marginTop="16dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"/>
+        android:layout_height="wrap_content" />
 </LinearLayout>
