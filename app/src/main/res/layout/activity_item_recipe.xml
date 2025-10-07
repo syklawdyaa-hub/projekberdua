@@ -32,7 +32,7 @@
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="#EDBBBB"/>
+            android:backgroundTint="#D97979"/>
 
         <Button
             android:id="@+id/btnDelete"
@@ -40,6 +40,6 @@
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="#EDBBBB"/>
+            android:backgroundTint="#D97979"/>
     </LinearLayout>
 </LinearLayout>
