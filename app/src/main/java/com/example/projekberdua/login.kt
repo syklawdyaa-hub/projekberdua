@@ -1,20 +1,32 @@
-package com.example.projekberdua
+package com.example.bukuresep
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
-class login : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_login)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+
+        val usernameEdit = findViewById<EditText>(R.id.username)
+        val passwordEdit = findViewById<EditText>(R.id.password)
+        val loginBtn = findViewById<Button>(R.id.loginBtn)
+
+        loginBtn.setOnClickListener {
+            val u = usernameEdit.text.toString().trim()
+            val p = passwordEdit.text.toString().trim()
+
+            if (u == "admin" && p == "1234") {
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+                finish()
+            } else {
+                Toast.makeText(this, "Username atau password salah", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 }
